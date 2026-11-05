@@ -9,6 +9,13 @@
 """
 
 
+# 题目：给定非负整数 n，返回斐波那契数 F(n)，其中 F(0)=0、F(1)=1。
+# 测试案例 1（输入见调用参数，预期结果见断言）：
+# assert fibonacci(10) == 55
+# 测试案例 2（输入见调用参数，预期结果见断言）：
+# assert fibonacci(0) == 0
+# 测试案例 3（输入见调用参数，预期结果见断言）：
+# assert fibonacci(1) == 1
 def fibonacci(n):
     """变体：斐波那契（最基础递推）。
 
@@ -22,6 +29,13 @@ def fibonacci(n):
     return b
 
 
+# 题目：每次可爬 1 或 2 阶，给定非负整数 n，返回爬到第 n 阶的方法数；本实现约定 n=0 时返回 0。
+# 测试案例 1（输入见调用参数，预期结果见断言）：
+# assert climb_stairs(5) == 8
+# 测试案例 2（输入见调用参数，预期结果见断言）：
+# assert climb_stairs(1) == 1
+# 测试案例 3（输入见调用参数，预期结果见断言）：
+# assert climb_stairs(0) == 0
 def climb_stairs(n):
     """变体：爬楼梯。
 
@@ -35,6 +49,15 @@ def climb_stairs(n):
     return b
 
 
+# 题目：给定等长的正整数重量 weights、非负价值 values 和非负容量 capacity，每件物品最多选一次，返回不超过容量的最大总价值。
+# 测试案例 1（输入见调用参数，预期结果见断言）：
+# assert knapsack([1, 3, 4], [15, 20, 30], 4) == 35
+# 测试案例 2（输入见调用参数，预期结果见断言）：
+# assert knapsack([2], [3], 4) == 3
+# 测试案例 3（输入见调用参数，预期结果见断言）：
+# assert knapsack([], [], 5) == 0
+# 测试案例 4（输入见调用参数，预期结果见断言）：
+# assert knapsack([2], [3], 0) == 0
 def knapsack(weights, values, capacity):
     """变体：0-1 背包。
 
@@ -49,6 +72,42 @@ def knapsack(weights, values, capacity):
     return dp[capacity]
 
 
+# 题目：给定等长的正整数重量 weights、非负价值 values 和非负容量 W，每种物品可重复选取，返回不超过容量的最大总价值。
+# 测试案例 1（输入见调用参数，预期结果见断言）：
+# assert complete_knapsack([1, 3, 4], [15, 20, 30], 4) == 60
+# 测试案例 2（输入见调用参数，预期结果见断言）：
+# assert complete_knapsack([2], [3], 4) == 6
+# 测试案例 3（输入见调用参数，预期结果见断言）：
+# assert complete_knapsack([], [], 5) == 0
+# 测试案例 4（输入见调用参数，预期结果见断言）：
+# assert complete_knapsack([2], [3], 0) == 0
+def complete_knapsack(weights, values, W):
+    """变体：完全背包。
+
+    思路：每种物品可以重复选取；正序更新容量，使当前物品可被再次使用。
+    dp[w] = 容量为 w 时的最大价值。
+    """
+    n = len(weights)
+
+    dp = [0] * (W + 1)
+
+    for i in range(n):
+        for j in range(weights[i], W + 1):
+            dp[j] = max(
+                dp[j],
+                dp[j - weights[i]] + values[i]
+            )
+
+    return dp[W]
+
+
+# 题目：给定整数数组，返回严格递增子序列的最大长度；子序列不要求连续，空数组返回 0。
+# 测试案例 1（输入见调用参数，预期结果见断言）：
+# assert longest_increasing_subsequence([10, 9, 2, 5, 3, 7, 101, 18]) == 4
+# 测试案例 2（输入见调用参数，预期结果见断言）：
+# assert longest_increasing_subsequence([2, 2, 2]) == 1
+# 测试案例 3（输入见调用参数，预期结果见断言）：
+# assert longest_increasing_subsequence([]) == 0
 def longest_increasing_subsequence(nums):
     """变体：最长递增子序列 (LIS)。
 
@@ -65,6 +124,13 @@ def longest_increasing_subsequence(nums):
     return max(dp)
 
 
+# 题目：给定正整数面额 coins 和非负金额 amount，每种硬币可重复使用，返回凑出金额的最少硬币数；无法凑出返回 -1。
+# 测试案例 1（输入见调用参数，预期结果见断言）：
+# assert coin_change([1, 2, 5], 11) == 3
+# 测试案例 2（输入见调用参数，预期结果见断言）：
+# assert coin_change([2], 3) == -1
+# 测试案例 3（输入见调用参数，预期结果见断言）：
+# assert coin_change([], 0) == 0
 def coin_change(coins, amount):
     """变体：零钱兑换（完全背包求最少个数）。
 

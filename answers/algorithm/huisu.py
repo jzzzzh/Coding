@@ -9,6 +9,13 @@
 """
 
 
+# 题目：给定不含重复元素的数组，返回所有全排列；每个元素恰好使用一次，答案顺序不作要求。
+# 测试案例 1（输入见调用参数，预期结果见断言）：
+# assert sorted(permute([1, 2, 3])) == [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+# 测试案例 2（输入见调用参数，预期结果见断言）：
+# assert permute([1]) == [[1]]
+# 测试案例 3（输入见调用参数，预期结果见断言）：
+# assert permute([]) == [[]]
 def permute(nums):
     """变体：全排列。
 
@@ -33,6 +40,11 @@ def permute(nums):
     return result
 
 
+# 题目：给定不含重复元素的数组，返回所有子集（包含空集）；每个子集中保持原数组相对顺序，答案顺序不作要求。
+# 测试案例 1（输入见调用参数，预期结果见断言）：
+# assert sorted(subsets([1, 2])) == [[], [1], [1, 2], [2]]
+# 测试案例 2（输入见调用参数，预期结果见断言）：
+# assert subsets([]) == [[]]
 def subsets(nums):
     """变体：子集。
 
@@ -51,6 +63,13 @@ def subsets(nums):
     return result
 
 
+# 题目：给定不重复的正整数 candidates 和非负目标 target，返回和为目标的所有不重复组合，每个数可重复选；会原地排序候选数组，答案顺序不作要求。
+# 测试案例 1（输入见调用参数，预期结果见断言）：
+# assert sorted(combination_sum([2, 3, 6, 7], 7)) == [[2, 2, 3], [7]]
+# 测试案例 2（输入见调用参数，预期结果见断言）：
+# assert combination_sum([2], 1) == []
+# 测试案例 3（输入见调用参数，预期结果见断言）：
+# assert combination_sum([], 0) == [[]]
 def combination_sum(candidates, target):
     """变体：组合总和（元素可重复选）。
 
@@ -74,6 +93,13 @@ def combination_sum(candidates, target):
     return result
 
 
+# 题目：给定正整数 n，在 n×n 棋盘放置 n 个互不攻击的皇后，返回所有棋盘；Q 表示皇后，. 表示空位，答案顺序不作要求。
+# 测试案例 1（输入见调用参数，预期结果见断言）：
+# assert sorted(solve_n_queens(4)) == sorted([['.Q..', '...Q', 'Q...', '..Q.'], ['..Q.', 'Q...', '...Q', '.Q..']])
+# 测试案例 2（输入见调用参数，预期结果见断言）：
+# assert solve_n_queens(1) == [['Q']]
+# 测试案例 3（输入见调用参数，预期结果见断言）：
+# assert solve_n_queens(2) == []
 def solve_n_queens(n):
     """变体：N 皇后。
 
