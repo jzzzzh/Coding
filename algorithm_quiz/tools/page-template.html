@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="阅读力扣官方完整题面，识别算法分类；逐题反馈、错题复习与本地记录。">
+<title>识题 · 算法分类训练</title>
+<style>
+:root{--paper:#f6f5ef;--card:#fffefb;--ink:#223832;--muted:#6b7770;--line:#dedfd4;--green:#23634d;--green-light:#e7efe7;--orange:#cf643d;--red:#a33d36;--red-light:#faece7;--radius:18px}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}button,input,select{font:inherit}button,a,input,select{outline-offset:5px}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.42}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #c2683e}button{border:0}a{color:var(--green)}[hidden]{display:none!important}.shell{max-width:1280px;padding:0 48px;margin:auto}.header{min-height:110px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);gap:24px}.brand{display:flex;align-items:center;gap:14px}.brand-mark{width:42px;height:42px;border-radius:12px;background:var(--green);color:white;display:grid;place-items:center;font:24px/1 Georgia,serif}.brand-name{font-size:22px;letter-spacing:2px;font-weight:750}.brand-sub{font-size:11px;letter-spacing:2px;color:var(--muted);margin-top:-3px}.header-note{font-size:12px;letter-spacing:1px;color:var(--muted);text-align:right}.online-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#648a65;margin-right:7px}.intro{padding:40px 0 32px;display:flex;align-items:end;justify-content:space-between;gap:32px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--orange);margin:0 0 10px}.intro h1{font-size:34px;line-height:1.35;letter-spacing:1px;margin:0 0 10px;font-weight:740}.intro p{margin:0;color:var(--muted);font-size:14px;max-width:660px}.bank-meta{flex-shrink:0;text-align:right}.bank-total{font:38px/1.1 Georgia,serif}.bank-meta small{display:block;font-size:12px;color:var(--muted);margin-top:7px}.workspace{display:grid;grid-template-columns:246px minmax(0,1fr);gap:26px;align-items:start}.sidebar{background:#eeefe5;border:1px solid var(--line);border-radius:var(--radius);padding:23px 22px;position:sticky;top:20px}.side-title{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:13px;font-weight:700;font-size:14px}.side-title span{font-weight:400;font-size:12px;color:var(--muted)}.progress-track{height:5px;background:#d9dfd1;border-radius:9px;overflow:hidden}.progress-bar{height:100%;background:var(--green);transition:width .2s;width:0}.question-map{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:21px 0}.map-button{aspect-ratio:1;border-radius:9px;border:1px solid #cfd4c8;background:#f8f9f2;color:var(--muted);font-size:12px;padding:0}.map-button.answered{background:#d7e5d5;color:var(--green);border-color:#c2d4bf}.map-button.active{box-shadow:0 0 0 2px var(--green);border-color:var(--green);color:var(--green);font-weight:700}.map-button.correct{background:#d7e8d9;color:var(--green)}.map-button.incorrect{background:#f1d8ce;color:var(--red);border-color:#e3beb2}.map-button.unanswered{background:#f4e8d1;color:#8a6b35}.legend{font-size:11px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap}.legend i{display:inline-block;width:7px;height:7px;border-radius:2px;background:#d7e5d5;margin-right:5px}.legend i.outline{border:1px solid var(--green);background:transparent}.separator{height:1px;background:#d7dccf;margin:22px 0}.filter-label{display:block;color:var(--muted);font-size:12px;margin:12px 0 5px}.filter{width:100%;padding:8px 10px;border:1px solid #ccd2c6;border-radius:8px;background:#f9faf4;color:var(--ink);font-size:12px}.side-count{font-size:11px;color:var(--muted);margin:9px 0 14px}.button{border-radius:10px;padding:11px 20px;font-size:13px;font-weight:650;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;text-decoration:none;transition:background .15s,transform .15s}.button:active{transform:translateY(1px)}.primary{background:var(--green);color:#fff}.primary:hover:not(:disabled){background:#184e3b}.secondary{background:var(--card);border:1px solid #d4d9ce;color:var(--ink)}.secondary:hover:not(:disabled){background:#f0f3e9}.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}.full{width:100%}.tools{display:flex;flex-wrap:wrap;gap:5px 12px;margin-top:14px}.text-button{background:transparent;padding:3px 0;color:var(--muted);font-size:11px;text-decoration:underline;text-underline-offset:3px}.small-note{font-size:10px;line-height:1.7;color:var(--muted);margin:13px 0 0}.main-column{min-width:0}.question-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px 38px}.question-header{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid #e9eadf;padding-bottom:19px;margin-bottom:24px}.question-label{font:13px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1px;color:var(--muted)}.question-label strong{font-size:25px;color:var(--green);font-weight:500;letter-spacing:0}.badge{font-size:11px;border-radius:5px;padding:3px 9px;color:var(--green);background:#eaf0e7}.badge.medium{background:#f5ead7;color:#8c6b33}.badge.hard{background:#f4e4df;color:#a2533e}.task-caption{font-size:11px;color:var(--orange);font-weight:650;letter-spacing:1px;margin:0 0 12px}.statement{font-size:18px;line-height:1.95;font-weight:550;margin:0;white-space:pre-wrap;overflow-wrap:anywhere}.example{margin:23px 0 27px;background:#f4f5ee;border-left:3px solid #a8b9a1;border-radius:0 10px 10px 0;padding:17px 20px}.example-title{font-size:11px;font-weight:750;letter-spacing:1px;color:var(--green);margin-bottom:10px}.example-row{display:grid;grid-template-columns:38px minmax(0,1fr);gap:10px;margin:5px 0}.example-row span{font-size:12px;color:var(--muted);padding-top:1px}.example pre{margin:0;font:13px/1.8 ui-monospace,SFMono-Regular,Consolas,"Microsoft YaHei",monospace;white-space:pre-wrap;word-break:break-word}.example-note{font-size:10px;color:var(--muted);margin-top:10px}.options-title{font-size:13px;margin:0 0 12px;font-weight:650}.options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0;padding:0;border:0;min-width:0}.option{display:flex;align-items:center;gap:13px;padding:16px 17px;border:1px solid #dce0d5;border-radius:11px;cursor:pointer;position:relative;min-height:66px;transition:background .15s,border .15s}.option:hover{background:#f3f6ee;border-color:#a8b9a1}.option.selected{background:var(--green-light);border-color:var(--green)}.option.right{background:#e7f0e5;border-color:#56835c}.option.wrong{background:var(--red-light);border-color:#c47d68}.option input{position:absolute;opacity:0;width:1px;height:1px}.option:focus-within{outline:3px solid #c2683e;outline-offset:3px}.option-letter{display:grid;place-items:center;width:28px;height:28px;flex-shrink:0;border:1px solid #d5dbce;border-radius:7px;font:12px ui-monospace,monospace;background:var(--card);color:var(--muted)}.option.selected .option-letter{background:var(--green);border-color:var(--green);color:white}.option-text{font-size:14px}.option-mark{margin-left:auto;font-size:13px;color:var(--green);flex-shrink:0}.option.wrong .option-mark{color:var(--red)}.question-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:26px}.nav-buttons{display:flex;gap:10px}.keyboard-hint{font-size:11px;color:var(--muted)}kbd{font:11px ui-monospace,monospace;border:1px solid #dcded2;border-radius:4px;padding:1px 4px;background:var(--paper)}.page-note{font-size:11px;line-height:1.9;color:var(--muted);margin:16px 4px 0;max-width:850px}.status{min-height:24px;color:var(--green);font-size:12px;margin:12px 4px 0}.status.error{color:var(--red)}.bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:32px 0 35px;border-top:1px solid var(--line);padding-top:18px;font-size:10px;color:var(--muted)}.result-card{background:#e7ede2;border:1px solid #cedac8;border-radius:var(--radius);padding:24px 28px;margin-bottom:20px}.result-top{display:flex;gap:25px;align-items:center;justify-content:space-between}.score{font:52px/1 Georgia,serif;color:var(--green)}.score small{font:13px -apple-system,sans-serif;color:var(--muted);margin-left:7px}.result-title{font-size:18px;margin:0 0 3px}.result-description{margin:0;color:var(--muted);font-size:12px}.result-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.category-results{margin-top:17px;display:flex;flex-wrap:wrap;gap:7px}.category-result{font-size:10px;border:1px solid #ccd6c6;border-radius:5px;padding:3px 7px;background:#f1f5eb}.explanation{margin-top:24px;border-top:1px solid var(--line);padding-top:20px}.review-heading{font-size:14px;font-weight:750;margin:0 0 8px}.review-heading.bad{color:var(--red)}.explanation p{font-size:13px;line-height:1.9;margin:7px 0;color:#536b5d}.source-line{font-size:11px;margin-top:13px;color:var(--muted)}.source-line a{font-weight:650;text-underline-offset:3px}.review-count{font-size:11px;color:var(--muted);margin:10px 0}.empty{padding:35px;text-align:center;border:1px dashed var(--line);border-radius:14px;background:var(--card)}dialog{border:1px solid var(--line);border-radius:18px;background:var(--card);color:var(--ink);padding:28px;width:min(430px,calc(100% - 32px))}dialog::backdrop{background:#172b2566}dialog h2{font-size:19px;margin:0 0 12px}dialog p{font-size:13px;color:var(--muted)}.dialog-actions{display:flex;gap:12px;justify-content:flex-end;margin-top:24px}.review-toggle{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);margin:15px 0}.review-toggle input{accent-color:var(--green)}
+@media(min-width:1100px){.question-card{min-height:590px}}@media(max-width:1000px){.shell{padding:0 28px}.workspace{grid-template-columns:210px minmax(0,1fr);gap:18px}.sidebar{padding:20px 16px}.question-card{padding:25px}.options{grid-template-columns:1fr}.intro h1{font-size:29px}.keyboard-hint{display:none}}@media(max-width:700px){.shell{padding:0 18px}.header{min-height:86px}.brand-name{font-size:20px}.header-note{font-size:10px;letter-spacing:0}.intro{padding:27px 0 24px;align-items:start;gap:15px}.intro h1{font-size:26px}.intro p{font-size:12px}.bank-total{font-size:30px}.bank-meta small{font-size:10px}.workspace{display:flex;flex-direction:column;gap:16px}.sidebar{position:static;width:100%;padding:17px 18px}.question-map{grid-template-columns:repeat(10,1fr);gap:7px;margin:14px 0}.map-button{border-radius:6px}.sidebar .separator{margin:15px 0}.filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.filter-label{margin-top:0}.sidebar-controls{display:flex;align-items:center;gap:15px;margin-top:12px}.sidebar-controls .full{width:auto;min-width:130px}.side-count{margin:0;font-size:10px}.tools{margin-top:10px}.small-note{display:none}.main-column{width:100%}.question-card{padding:23px 20px;border-radius:15px}.statement{font-size:16px}.question-header{padding-bottom:15px;margin-bottom:19px}.example{padding:14px 15px;margin:20px 0}.example pre{font-size:12px}.option{padding:13px 14px;min-height:59px}.option-text{font-size:13px}.question-footer{align-items:stretch;flex-direction:column;gap:12px}.nav-buttons .button{flex:1}.question-footer>.primary{width:100%}.result-card{padding:20px}.score{font-size:42px}.result-title{font-size:16px}.bottom{margin-top:25px;align-items:start;flex-direction:column;gap:5px}.legend{font-size:10px}.result-actions .button{font-size:12px;padding:9px 12px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.official-title{font-size:22px;line-height:1.6;margin:18px 0 12px;overflow-wrap:anywhere}.content-heading{display:flex;justify-content:space-between;align-items:baseline;gap:15px;margin-bottom:12px}.content-heading .task-caption{margin:0}.original-link{font-size:11px;flex-shrink:0;text-underline-offset:3px}.content-status{font-size:12px;color:var(--muted);margin:10px 0 20px}.content-status.error{color:var(--red)}.official-problem{font-size:16px;line-height:1.95;overflow-wrap:anywhere;margin:10px 0 30px}.official-problem p{margin:12px 0}.official-problem strong,.official-problem b{font-weight:650}.official-problem pre{background:#f3f5ed;border-left:3px solid #a8b9a1;border-radius:0 8px 8px 0;padding:15px 18px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;line-height:1.9;overflow-x:auto}.official-problem code{font:0.88em/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;background:#f1f2ea;padding:2px 4px;border-radius:3px}.official-problem pre code{background:transparent;padding:0}.official-problem ul,.official-problem ol{padding-left:25px}.official-problem li{margin:6px 0}.official-problem img{max-width:100%;height:auto;display:block;margin:18px auto}.official-problem table{border-collapse:collapse;max-width:100%;display:block;overflow-x:auto}.official-problem td,.official-problem th{padding:7px 12px;border:1px solid var(--line)}.official-problem sub,.official-problem sup{font-size:.75em;line-height:0}.official-problem blockquote{border-left:3px solid var(--line);padding-left:16px;margin-left:0;color:var(--muted)}.summary-fallback{margin:14px 0 24px;padding:14px;border:1px dashed var(--line);border-radius:10px}.summary-fallback summary{cursor:pointer;color:var(--muted);font-size:12px}.summary-fallback .statement{font-size:14px;margin-top:12px;font-weight:400}
+@media(max-width:700px){.content-heading{align-items:start;gap:10px}.content-heading .task-caption{font-size:10px}.original-link{font-size:10px}.official-problem{font-size:15px}.official-problem pre{font-size:12px;padding:12px}.official-problem ul,.official-problem ol{padding-left:20px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="header"><div class="brand"><div class="brand-mark" aria-hidden="true">识</div><div><div class="brand-name">识题</div><div class="brand-sub">ALGORITHM PRACTICE</div></div></div><div class="header-note"><span class="online-dot"></span>完整原题 · 本地记录<br>从题目特征，找到解题方向</div></header>
+<section class="intro"><div><div class="eyebrow">READ. RECOGNIZE. REASON.</div><h1>先识别思路，再动手解题。</h1><p>阅读官方完整题面、全部示例和约束，选择最贴合的算法。<br>每轮最多 20 题，逐题提交即时反馈；错题优先，答对暂停 7 天。</p></div><div class="bank-meta"><div class="bank-total" id="bank-total">—</div><small id="bank-subtitle">道题目 · 14 个分类</small></div></section>
+<div class="workspace">
+<aside class="sidebar" aria-label="答题进度和题库设置">
+<div class="side-title">本轮进度 <span id="progress-text">0 / 20</span></div><div class="progress-track" role="progressbar" aria-label="已答题数" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0" id="progress"><div class="progress-bar" id="progress-bar"></div></div>
+<nav class="question-map" id="question-map" aria-label="题号导航"></nav><div class="legend" id="legend"><span><i></i>已提交</span><span><i class="outline"></i>当前题目</span></div>
+<div class="separator"></div>
+<div class="filter-grid"><div><label for="category-filter" class="filter-label">练习分类</label><select class="filter" id="category-filter"><option value="">全部分类</option></select></div><div><label for="difficulty-filter" class="filter-label">题目难度</label><select class="filter" id="difficulty-filter"><option value="">全部难度</option><option value="Easy">简单</option><option value="Medium">中等</option><option value="Hard">困难</option></select></div></div>
+<div class="sidebar-controls"><p class="side-count" id="pool-count"></p><button class="button secondary full" id="new-round">↻ &nbsp; 换一组 20 题</button></div>
+<div class="tools"><button class="text-button" id="download-bank">下载题库 CSV</button><button class="text-button" id="import-csv">导入 CSV</button></div><input type="file" id="csv-file" accept=".csv,text/csv" hidden><p class="small-note" id="study-status"></p><p class="small-note" id="save-status" role="status"></p><div class="tools"><button class="text-button" id="export-profile">导出个人记录</button><button class="text-button" id="import-profile">恢复个人记录</button></div><input type="file" id="profile-file" accept=".json,application/json" hidden><p class="small-note">导入同结构 CSV 可扩充本次练习；导入仅对本次打开有效。完整题面首次联网，成功后读取本机缓存。</p>
+</aside>
+<main class="main-column">
+<section class="result-card" id="result" aria-label="本轮成绩" hidden><div class="result-top"><div><div class="eyebrow">ROUND COMPLETE</div><h2 class="result-title">本轮练习已完成</h2><p class="result-description" id="result-description"></p></div><div class="score" id="score"></div></div><div class="category-results" id="category-results"></div><div class="result-actions"><button class="button primary" id="again">再练 20 题</button><button class="button secondary" id="download-errors">导出错题 CSV</button></div><label class="review-toggle"><input type="checkbox" id="only-errors">只回顾本轮错题</label><p class="review-count" id="review-count"></p></section>
+<div class="empty" id="empty-review" hidden></div>
+<article class="question-card" id="question-card" aria-label="当前题目">
+<div class="question-header"><div class="question-label">QUESTION <strong id="question-number">01</strong> <span id="question-total">/ 20</span></div><span class="badge" id="difficulty-badge"></span></div>
+<div class="content-heading"><p class="task-caption" id="question-caption">LeetCode 官方完整题面</p><a id="original-link" class="original-link" target="_blank" rel="noopener noreferrer">打开官方原题 ↗</a></div>
+<p class="content-status" id="content-status" role="status" aria-live="polite"></p>
+<h2 class="official-title" id="official-title" hidden></h2><div class="official-problem" id="official-content" hidden></div>
+<button class="text-button" id="retry-content" hidden>重试加载完整题面</button>
+<details class="summary-fallback" id="summary-fallback" hidden><summary>查看备用摘要与自带示例</summary><p class="statement" id="statement"></p>
+<div class="example"><div class="example-title">示例</div><div class="example-row"><span>输入</span><pre id="example-input"></pre></div><div class="example-row"><span>输出</span><pre id="example-output"></pre></div><div class="example-note" id="example-note"></div></div></details>
+<p class="options-title" id="options-title">这道题最适合用哪一种思路？</p><fieldset class="options" id="options" aria-labelledby="options-title"></fieldset>
+<section class="explanation" id="explanation" hidden><h3 class="review-heading" id="review-heading"></h3><p id="answer-explanation"></p><div class="source-line"><a id="source-link" target="_blank" rel="noopener noreferrer"></a><div id="source-tags"></div></div></section>
+<div class="question-footer"><div class="nav-buttons"><button class="button ghost" id="prev">← 上一题</button><button class="button secondary" id="next">下一题 →</button></div><span class="keyboard-hint"><kbd>1</kbd>–<kbd>4</kbd> 选择 · <kbd>←</kbd><kbd>→</kbd> 切题</span><button class="button ghost" id="retry" hidden>重做本题</button><button class="button primary" id="submit">提交本题</button></div>
+</article>
+<p class="page-note">分类是本题库指定的训练方向。部分原题支持多种算法，请结合题目要求与给定选项判断。官方完整题面按原样展示；训练分类与官方标签在提交后显示。</p><p class="status" id="status" role="status" aria-live="polite"></p>
+</main>
+</div>
+<footer class="bottom"><span id="source-summary">题目来源：力扣公开题面；题意摘要及训练标注经过整理。</span><span>20 QUESTIONS · FOUR CHOICES · ONE STEP FORWARD</span></footer>
+</div>
+<dialog id="feedback-dialog" aria-labelledby="feedback-title"><h2 id="feedback-title"></h2><p id="feedback-choice"></p><p id="feedback-reason"></p><div class="dialog-actions"><button class="button ghost" id="feedback-close">留在本题</button><button class="button primary" id="feedback-next">下一题 →</button></div></dialog>
+<dialog id="confirm-dialog" aria-labelledby="dialog-title"><h2 id="dialog-title"></h2><p id="dialog-description"></p><div class="dialog-actions"><button class="button ghost" id="dialog-cancel">继续答题</button><button class="button primary" id="dialog-confirm">确认交卷</button></div></dialog>
+<script id="bank-data" type="application/json">__BANK_JSON__</script>
+<script>
+__STUDY_CORE__
+</script>
+<script>
+'use strict';
+// 题库内置在页面中，file:// 打开时也无需 fetch 或服务器。
+const INITIAL_BANK = JSON.parse(document.getElementById('bank-data').textContent);
+const LETTERS = ['A', 'B', 'C', 'D'];
+const STORAGE_KEY = 'algorithm-quiz-personal-v2';
+const CSV_FIELDS = ['id','title','difficulty','statement','example_input','example_output','example_note','option_a','option_b','option_c','option_d','answer','category','explanation','source_url','source_tags','slug','fetched_at','content_note'];
+const $ = id => document.getElementById(id);
+let bank = validateBank(INITIAL_BANK.questions);
+let byId = new Map(bank.map(q => [q.id, q]));
+let round = null;
+let pendingAction = null;
+let storageOK = true;
+let restoreMessage = '';
+let profile = emptyProfile();
+const PROFILE_TOKEN = document.querySelector('meta[name="profile-token"]')?.content;
+let remoteQueue = Promise.resolve();
+let saveGeneration = 0;
+let activeContentKey='', contentVersion=0;
+let activeContentController=null;
+const fullQuestionCache=new Map(), contentRequests=new Map();
+
+// Fisher–Yates 洗牌：不修改原数据。先打乱候选再取 20 项，不会重复抽题。
+function shuffle(items, random = Math.random) {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+function normalizeDifficulty(value) {
+  const aliases = {easy:'Easy',medium:'Medium',hard:'Hard','简单':'Easy','中等':'Medium','困难':'Hard'};
+  return aliases[String(value).toLowerCase()] || '';
+}
+function validateBank(rows, minimum = 20) {
+  if (!Array.isArray(rows) || rows.length < minimum) throw new Error(`题库至少需要 ${minimum} 道有效题目。`);
+  const seen = new Set();
+  return rows.map((row, index) => {
+    const q = {...row};
+    for (const field of CSV_FIELDS) q[field] = String(q[field] ?? '').trim();
+    for (const field of ['id','title','statement','example_input','example_output','category','explanation']) {
+      if (!q[field]) throw new Error(`第 ${index + 1} 行缺少 ${field}。`);
+    }
+    if (seen.has(q.id)) throw new Error(`题号 ${q.id} 重复。`);
+    seen.add(q.id);
+    const options = [q.option_a, q.option_b, q.option_c, q.option_d];
+    if (options.some(value => !value) || new Set(options).size !== 4) throw new Error(`题号 ${q.id} 必须有四个不同选项。`);
+    if (!LETTERS.includes(q.answer) || options[LETTERS.indexOf(q.answer)] !== q.category) throw new Error(`题号 ${q.id} 的答案字母与分类不一致。`);
+    q.difficulty = normalizeDifficulty(q.difficulty);
+    if (!q.difficulty) throw new Error(`题号 ${q.id} 的难度须为 Easy、Medium 或 Hard。`);
+    if (!/^https:\/\/leetcode\.(cn|com)\/problems\/[a-z0-9-]+\/?$/.test(q.source_url)) throw new Error(`题号 ${q.id} 的来源必须是力扣题目链接。`);
+    return q;
+  });
+}
+// 仅复制允许的题面元素；不执行来自远端 HTML 的脚本、样式、事件或嵌入页面。
+function sanitizeOfficialHTML(html,baseURL) {
+  const parsed=new DOMParser().parseFromString(html,'text/html');
+  const allowed=new Set(['P','PRE','CODE','STRONG','B','EM','I','U','UL','OL','LI','BR','HR','SPAN','DIV','TABLE','THEAD','TBODY','TR','TD','TH','SUB','SUP','BLOCKQUOTE','DL','DT','DD','IMG','A','FIGURE','FIGCAPTION']);
+  const blocked=new Set(['SCRIPT','STYLE','IFRAME','OBJECT','EMBED','FORM','INPUT','BUTTON','LINK','META','BASE','SVG','MATH','VIDEO','AUDIO','NOSCRIPT']);
+  const fragment=document.createDocumentFragment();
+  function safeURL(raw,image=false) {
+    try {
+      const url=new URL(raw,baseURL);
+      if(url.protocol==='http:')url.protocol='https:';
+      if(url.protocol!=='https:')return null;
+      if(image && !['assets.leetcode.com','static.leetcode.cn','pic.leetcode.cn','pic.leetcode-cn.com','leetcode.com','leetcode.cn'].includes(url.hostname))return null;
+      return url.href;
+    } catch (_) {return null;}
+  }
+  function copy(node,parent) {
+    if(node.nodeType===3){parent.append(document.createTextNode(node.textContent));return;}
+    if(node.nodeType!==1 || blocked.has(node.tagName))return;
+    if(!allowed.has(node.tagName)){for(const child of node.childNodes)copy(child,parent);return;}
+    const target=document.createElement(node.tagName.toLowerCase());
+    if(node.tagName==='IMG') {
+      const src=safeURL(node.getAttribute('src')||'',true);
+      if(!src)return;
+      target.src=src;target.alt=node.getAttribute('alt')||'题目配图';target.loading='lazy';target.referrerPolicy='no-referrer';
+    }
+    if(node.tagName==='A') {
+      const href=safeURL(node.getAttribute('href')||'');
+      if(href){target.href=href;target.target='_blank';target.rel='noopener noreferrer';}
+    }
+    if(['TD','TH'].includes(node.tagName))for(const name of ['colspan','rowspan']) {
+      const n=Number(node.getAttribute(name));if(Number.isInteger(n)&&n>=1&&n<=20)target.setAttribute(name,n);
+    }
+    for(const child of node.childNodes)copy(child,target);
+    parent.append(target);
+  }
+  for(const node of parsed.body.childNodes)copy(node,fragment);
+  return fragment;
+}
+async function fetchFullQuestion(slug,signal) {
+  const existing=contentRequests.get(slug);
+  if(existing&&!existing.signal.aborted)return existing.promise;
+  const request=(async()=>{
+    const response=await fetch('/api/question/'+encodeURIComponent(slug),{signal,headers:{'X-Profile-Token':PROFILE_TOKEN}});
+    const result=await response.json();
+    if(!response.ok)throw new Error(result.error||'完整题面加载失败');
+    const q=result.question;
+    if(!q || q.slug!==slug || typeof q.content_html!=='string'||!q.content_html.trim())throw new Error('官方未返回完整题面');
+    fullQuestionCache.set(slug,q);return q;
+  })();
+  const entry={promise:request,signal};contentRequests.set(slug,entry);
+  const cleanup=()=>{if(contentRequests.get(slug)===entry)contentRequests.delete(slug);};
+  request.then(cleanup,cleanup);
+  return request;
+}
+async function showFullQuestion(q,retry=false) {
+  const key=q.id+'|'+q.source_url;
+  if(key===activeContentKey&&!retry)return;
+  activeContentController?.abort();activeContentController=new AbortController();
+  activeContentKey=key;const version=++contentVersion;
+  $('original-link').href=q.source_url;
+  $('official-title').hidden=true;$('official-content').hidden=true;$('official-content').replaceChildren();
+  $('summary-fallback').hidden=true;$('retry-content').hidden=true;
+  $('content-status').className='content-status';
+  $('question-caption').textContent='LeetCode 官方完整题面';
+  if(!PROFILE_TOKEN) {
+    $('content-status').textContent='请通过“启动题库.command”打开，即可读取完整题面和本机缓存；也可点击右侧链接阅读官方原题。';
+    $('summary-fallback').hidden=false;return;
+  }
+  $('content-status').textContent='正在读取官方完整题面（全部示例与约束）…';
+  try {
+    const slug=q.slug||new URL(q.source_url).pathname.split('/')[2];
+    const full=fullQuestionCache.get(slug)||await fetchFullQuestion(slug,activeContentController.signal);
+    if(String(full.id)!==q.id)throw new Error('原题编号与题库不一致，请打开官方原题核对');
+    if(version!==contentVersion)return;
+    const fragment=sanitizeOfficialHTML(full.content_html,full.source_url);
+    $('official-title').textContent=full.id+'. '+full.title;$('official-title').hidden=false;
+    $('official-content').replaceChildren(fragment);$('official-content').hidden=false;
+    $('question-caption').textContent=full.language==='en'?'LeetCode 官方完整题面（英文）':'LeetCode 官方完整题面';
+    $('content-status').textContent=full.cache_saved===false?full.cache_error:'正文、全部示例和约束来自官方题面；已缓存在本机。';
+  } catch(error) {
+    if(version!==contentVersion)return;
+    $('content-status').className='content-status error';
+    $('content-status').textContent='完整题面暂未加载：'+error.message+'。可重试或打开官方原题。';
+    $('retry-content').hidden=false;$('summary-fallback').hidden=false;
+  }
+}
+function fingerprint() {
+  let hash = 2166136261;
+  for (const q of bank) for (const c of q.id + q.statement + q.category) hash = Math.imul(hash ^ c.charCodeAt(0), 16777619) >>> 0;
+  return `${bank.length}:${hash}`;
+}
+function filteredBank() {
+  return bank.filter(q => (!$('category-filter').value || q.category === $('category-filter').value) && (!$('difficulty-filter').value || q.difficulty === $('difficulty-filter').value));
+}
+function pool() {return eligibleQuestions(filteredBank(), profile);}
+
+function populateFilters() {
+  const select = $('category-filter');
+  select.replaceChildren(new Option('全部分类', ''));
+  for (const category of [...new Set(bank.map(q => q.category))]) select.add(new Option(category, category));
+  $('bank-total').textContent = bank.length.toLocaleString('zh-CN');
+  $('bank-subtitle').textContent = `道题目 · ${select.options.length - 1} 个分类`;
+  updatePool();
+}
+function updatePool() {
+  const count=pool().length;
+  $('pool-count').textContent = count ? `当前可练 ${count} 题，抽取 ${Math.min(20,count)} 题` : '暂无到期题目，请稍后再来或放宽筛选';
+  $('new-round').disabled = count === 0;
+  $('again').disabled = count === 0;
+  const wrong=Object.values(profile.records).filter(r=>r.status==='wrong').length;
+  const cooling=bank.filter(q=>profile.records[q.id]?.status==='correct' && profile.records[q.id].reviewAfter>Date.now()).length;
+  $('study-status').textContent = `待复习错题 ${wrong} 道 · 7 天暂停中 ${cooling} 道。错题优先抽取，不会用暂停中的题补满 20 道。`;
+}
+function createRound(candidates, random = Math.random) {return drawStudyRound(candidates,profile,Date.now(),random);}
+function saveBrowser() {
+  try {localStorage.setItem(STORAGE_KEY,JSON.stringify(profile));storageOK=true;}
+  catch (_) {storageOK=false;}
+}
+function save() {
+  profile.session={fingerprint:fingerprint(),round,category:$('category-filter').value,difficulty:$('difficulty-filter').value,updatedAt:Math.max(Date.now(),(profile.session?.updatedAt||0)+1)};
+  saveBrowser();
+  if (!PROFILE_TOKEN) {
+    $('save-status').textContent=storageOK ? '已保存在当前浏览器；使用本地启动文件可自动写入个人记录文件。' : '浏览器保存失败，请及时导出个人记录备份。';
+    return;
+  }
+  const snapshot=JSON.stringify(profile), generation=++saveGeneration;
+  $('save-status').textContent='正在保存个人记录文件…';
+  remoteQueue=remoteQueue.catch(()=>{}).then(async()=>{
+    const response=await fetch('/api/profile',{method:'POST',headers:{'Content-Type':'application/json','X-Profile-Token':PROFILE_TOKEN},body:snapshot});
+    const result=await response.json();
+    if (!response.ok) throw new Error(result.error||'本地保存失败');
+    // 较早请求的响应不能覆盖本页后来提交的当前轮次。
+    const activeSession=profile.session;
+    profile=mergeProfiles(profile,result.profile);profile.session=activeSession;saveBrowser();
+    if (generation===saveGeneration) $('save-status').textContent='已自动保存到 personal/ 中的个人记录文件（Git 已忽略）。';
+  }).catch(error=>{
+    $('save-status').textContent=`文件保存失败：${error.message}。${storageOK?'浏览器已保留记录，重新打开后可同步。':'请导出记录备份。'}`;
+  });
+}
+
+function restore() {
+  try {
+    const data = profile.session;
+    if (!data) return false;
+    const r = data.round;
+    if (data.fingerprint !== fingerprint() || !r || !Array.isArray(r.entries) || r.entries.length < 1 || r.entries.length > 20 || new Set(r.entries.map(e => e.id)).size !== r.entries.length || !Number.isInteger(r.current) || r.current < 0 || r.current >= r.entries.length || typeof r.submitted !== 'boolean') return false;
+    for (const entry of r.entries) {
+      const q = byId.get(entry.id);
+      const expected = q && [q.option_a,q.option_b,q.option_c,q.option_d];
+      if (!q || !Array.isArray(entry.options) || entry.options.length !== 4 || new Set(entry.options).size !== 4 || entry.options.some(o => !expected.includes(o)) || !(entry.selected === null || entry.options.includes(entry.selected)) || typeof entry.checked !== 'boolean' || (entry.checked && entry.selected===null)) return false;
+    }
+    round = r;
+    round.onlyErrors = Boolean(r.onlyErrors);
+    if ([...$('category-filter').options].some(o => o.value === data.category)) $('category-filter').value = data.category;
+    if ([...$('difficulty-filter').options].some(o => o.value === data.difficulty)) $('difficulty-filter').value = data.difficulty;
+    updatePool();
+    round.submitted=round.entries.every(e=>e.checked);
+    // 刷新后不重新呈现已答对的当前题；本轮仍可用题号回顾已提交题目。
+    if (round.entries[round.current].checked && !isError(round.entries[round.current])) {
+      const pending=round.entries.findIndex(e=>!e.checked);
+      if (pending>=0) round.current=pending;
+    }
+    restoreMessage = '已恢复个人记录与进度；错题仍保留，答对题 7 天内不再抽取。';
+    return true;
+  } catch (_) {return false;}
+}
+function notice(message, error = false) {
+  $('status').textContent = message;
+  $('status').classList.toggle('error', error);
+}
+function startRound() {
+  try {
+    round = createRound(filteredBank());
+    $('only-errors').checked = false;
+    save(); render();
+    updatePool();notice(round.entries.length ? `已抽取 ${round.entries.length} 题：错题优先，每题提交后显示对错和原因。` : '当前没有到期题目。已答对的题目会在 7 天后恢复抽取。');
+  } catch (error) {notice(error.message, true);}
+}
+function confirmAction(title, description, buttonText, action) {
+  pendingAction = action;
+  $('dialog-title').textContent = title;
+  $('dialog-description').textContent = description;
+  $('dialog-confirm').textContent = buttonText;
+  $('confirm-dialog').showModal();
+}
+function requestNewRound() {
+  if (!round) return;
+  if (!pool().length) return notice('当前没有到期题目，请稍后再来或放宽筛选。', true);
+  if (round.entries.some(e => !e.checked && e.selected !== null)) {
+    confirmAction('更换这一轮题目？', '已提交的对错与复习记录会保留，仅未提交的选择会清空。新一轮优先抽错题，并跳过 7 天暂停中的题。', '更换题目', startRound);
+  } else startRound();
+}
+function grade(r = round) {
+  const correct=r.entries.filter(e=>e.checked&&e.selected===byId.get(e.id).category).length;
+  const unanswered=r.entries.filter(e=>!e.checked).length;
+  return {correct,unanswered,incorrect:r.entries.length-correct-unanswered,score:r.entries.length?Math.round(100*correct/r.entries.length):0};
+}
+function isError(entry) {return entry.checked && entry.selected !== byId.get(entry.id).category;}
+function visibleIndices() {
+  return round.entries.map((_,i)=>i).filter(i=>!round.submitted||!round.onlyErrors||isError(round.entries[i]));
+}
+function submitQuestion() {
+  if (!round) return;
+  const entry=round.entries[round.current];
+  if (!entry || entry.checked) return;
+  if (entry.selected===null) return notice('请先选择一个选项，再提交本题。',true);
+  const q=byId.get(entry.id), at=Date.now();
+  entry.attemptId=`${at}-${Math.random().toString(36).slice(2)}`;
+  recordResult(profile,q,entry.selected,at,entry.attemptId);
+  entry.checked=true;
+  round.submitted=round.entries.every(e=>e.checked);round.onlyErrors=false;
+  save();updatePool();render();
+  const correct=entry.selected===q.category;
+  $('feedback-title').textContent=correct?'✓ 回答正确':'× 回答不正确';
+  $('feedback-choice').textContent=`你的选择：${entry.selected}。本题训练答案：${q.category}。`;
+  $('feedback-reason').textContent=(correct?'原因：':'原因：所选方向不符合本题指定的主要训练目标。')+q.explanation+(correct?' 本题从现在起暂停抽取 7 天。':' 已加入错题，后续会优先出现，直到提交正确答案。');
+  $('feedback-next').textContent=round.entries.some(e=>!e.checked)?'继续下一题 →':round.submitted?'查看本轮成绩':'下一题 →';
+  $('feedback-dialog').showModal();
+  notice(correct?'已答对，7 天内不再抽取。':'已保存为错题，刷新后仍会保留。');
+}
+function retryQuestion() {
+  const entry=round.entries[round.current];
+  if (!entry || !isError(entry)) return;
+  entry.checked=false;entry.selected=null;entry.attemptId=null;round.submitted=false;round.onlyErrors=false;
+  save();render();notice('请重新选择并提交。原错题记录会保留，答对后进入 7 天暂停期。');
+}
+function continueAfterFeedback() {
+  $('feedback-dialog').close();
+  const next=round.entries.findIndex((e,i)=>i>round.current&&!e.checked);
+  const first=round.entries.findIndex(e=>!e.checked);
+  if(next>=0) goTo(next);else if(first>=0) goTo(first);else $('result').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function choose(category) {
+  if (!round) return;
+  const entry = round.entries[round.current];
+  if (!entry || entry.checked) return;
+  if (!entry.options.includes(category)) return;
+  entry.selected = category;
+  save(); render();
+  // 选择后恢复焦点，便于键盘和读屏用户继续操作。
+  const inputs = [...$('options').querySelectorAll('input')];
+  inputs[entry.options.indexOf(category)]?.focus({preventScroll:true});
+}
+function goTo(index) {round.current = index; save(); render();}
+function step(direction) {
+  if (!round) return;
+  const visible = visibleIndices();
+  const next = visible.indexOf(round.current) + direction;
+  if (next >= 0 && next < visible.length) goTo(visible[next]);
+}
+function render() {
+  const answered = round.entries.filter(e => e.checked).length;
+  $('progress-text').textContent = `${answered} / ${round.entries.length}`;
+  $('progress-bar').style.width = `${round.entries.length?100*answered/round.entries.length:0}%`;
+  $('progress').setAttribute('aria-valuenow', answered);
+  $('progress').setAttribute('aria-valuemax', round.entries.length||20);
+  $('question-map').replaceChildren();
+  const visible = visibleIndices();
+  if (visible.length && !visible.includes(round.current)) round.current = visible[0];
+  round.entries.forEach((entry, index) => {
+    const button = document.createElement('button');
+    const status = entry.checked ? (isError(entry)?'incorrect':'correct') : entry.selected !== null ? 'answered' : '';
+    button.className = `map-button ${status} ${index === round.current && visible.length ? 'active' : ''}`;
+    button.textContent = String(index + 1).padStart(2, '0');
+    button.setAttribute('aria-label', `第 ${index+1} 题，${entry.checked ? (isError(entry)?'错误':'正确') : entry.selected ? '已选，未提交' : '未答'}`);
+    if (index === round.current && visible.length) button.setAttribute('aria-current', 'step');
+    button.disabled = !visible.includes(index);
+    button.addEventListener('click', () => goTo(index));
+    $('question-map').append(button);
+  });
+  $('result').hidden = !round.submitted || !round.entries.length;
+  $('empty-review').hidden = visible.length > 0;
+  $('empty-review').textContent = round.entries.length ? '本轮全部答对了。新一轮会跳过这些题 7 天。' : '当前没有到期题目。答对题会在 7 天后恢复，或可放宽分类与难度筛选。';
+  $('question-card').hidden = visible.length === 0;
+  $('only-errors').checked = round.onlyErrors;
+  if (round.submitted) renderResults();
+  if (!visible.length) return;
+  const entry = round.entries[round.current];
+  const q = byId.get(entry.id);
+  $('explanation').hidden=!entry.checked;
+  $('submit').hidden=entry.checked;
+  $('retry').hidden=!isError(entry);
+  $('question-number').textContent = String(round.current + 1).padStart(2, '0');
+  $('question-total').textContent = `/ ${round.entries.length}`;
+  $('statement').textContent = q.statement;
+  $('example-input').textContent = q.example_input;
+  $('example-output').textContent = q.example_output;
+  $('example-note').textContent = q.example_note;
+  void showFullQuestion(q);
+  const difficulty = q.difficulty;
+  $('difficulty-badge').textContent = {Easy:'简单',Medium:'中等',Hard:'困难'}[difficulty];
+  $('difficulty-badge').className = `badge ${difficulty.toLowerCase()}`;
+  $('options').replaceChildren();
+  entry.options.forEach((category, index) => {
+    const label = document.createElement('label');
+    const right = entry.checked && category === q.category;
+    const wrong = entry.checked && category === entry.selected && !right;
+    label.className = `option ${entry.selected === category ? 'selected' : ''} ${right ? 'right' : ''} ${wrong ? 'wrong' : ''}`;
+    const radio = document.createElement('input');
+    radio.type = 'radio'; radio.name = 'answer'; radio.value = category;
+    radio.checked = entry.selected === category; radio.disabled = entry.checked;
+    radio.addEventListener('change', () => choose(category));
+    const letter = document.createElement('span'); letter.className = 'option-letter'; letter.textContent = LETTERS[index];
+    const text = document.createElement('span'); text.className = 'option-text'; text.textContent = category;
+    label.append(radio, letter, text);
+    if (right || wrong) {const mark = document.createElement('span'); mark.className = 'option-mark'; mark.textContent = right ? '✓ 正确' : '×'; label.append(mark);}
+    $('options').append(label);
+  });
+  const position = visible.indexOf(round.current);
+  $('prev').disabled = position === 0;
+  $('next').disabled = position === visible.length - 1;
+  if (entry.checked) {
+    const correct = entry.selected === q.category;
+    $('review-heading').textContent = correct ? '✓ 回答正确' : `${entry.selected === null ? '○ 本题未作答' : '× 回答有误'} · 训练答案：${q.category}`;
+    $('review-heading').className = `review-heading ${correct ? '' : 'bad'}`;
+    $('answer-explanation').textContent = q.explanation;
+    $('source-link').textContent = `LeetCode ${q.id} · ${q.title} ↗`;
+    $('source-link').href = q.source_url;
+    $('source-tags').textContent = `官方标签：${q.source_tags || '未提供'}。这些标签代表多种可能解法，本题按摘要指定方向训练。`;
+  }
+}
+function renderResults() {
+  const result = grade();
+  $('score').replaceChildren(document.createTextNode(result.score));
+  const unit = document.createElement('small'); unit.textContent = '/ 100'; $('score').append(unit);
+  $('result-description').textContent = `答对 ${result.correct} 题 · 答错 ${result.incorrect} 题 · 未答 ${result.unanswered} 题`;
+  $('download-errors').disabled = !bank.some(q=>profile.records[q.id]?.status==='wrong');
+  $('review-count').textContent = round.onlyErrors ? `当前回顾 ${round.entries.length-result.correct} 道错题与未答题` : `当前可回顾全部 ${round.entries.length} 道题`;
+  const stats = new Map();
+  for (const entry of round.entries) {
+    const category = byId.get(entry.id).category;
+    const item = stats.get(category) || {correct:0,total:0};
+    item.total++; if (!isError(entry)) item.correct++; stats.set(category,item);
+  }
+  $('category-results').replaceChildren();
+  for (const [category, count] of stats) {
+    const span = document.createElement('span'); span.className = 'category-result'; span.textContent = `${category} ${count.correct}/${count.total}`; $('category-results').append(span);
+  }
+}
+// 兼容 UTF-8 BOM、CRLF、逗号、双引号转义以及带换行的单元格。
+function parseCSV(text) {
+  const result = [];
+  let row = [], field = '', quoted = false, closed = false;
+  text = text.replace(/^\uFEFF/, '');
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (quoted) {
+      if (c === '"' && text[i+1] === '"') {field += '"'; i++;}
+      else if (c === '"') {quoted = false; closed = true;}
+      else field += c;
+    } else if (c === '"') {
+      if (field || closed) throw new Error('CSV 引号位置错误。');
+      quoted = true;
+    } else if (c === ',' || c === '\n' || c === '\r') {
+      row.push(field); field = ''; closed = false;
+      if (c !== ',') {if (row.some(value => value !== '')) result.push(row); row = []; if (c === '\r' && text[i+1] === '\n') i++;}
+    } else {
+      if (closed && c.trim()) throw new Error('CSV 单元格闭合引号后存在异常字符。');
+      if (!closed) field += c;
+    }
+  }
+  if (quoted) throw new Error('CSV 存在未闭合引号。');
+  row.push(field); if (row.some(value => value !== '')) result.push(row);
+  if (!result.length) throw new Error('CSV 文件为空。');
+  const headers = result.shift().map(value => value.trim());
+  if (new Set(headers).size !== headers.length) throw new Error('CSV 列名重复。');
+  for (const field of CSV_FIELDS.filter(f => !['example_note','source_tags','slug','fetched_at','content_note'].includes(f))) if (!headers.includes(field)) throw new Error(`CSV 缺少列：${field}`);
+  return result.map((values, index) => {
+    if (values.length !== headers.length) throw new Error(`CSV 第 ${index+2} 行列数不一致。`);
+    return Object.fromEntries(headers.map((header, i) => [header, values[i]]));
+  });
+}
+function toCSV(rows) {
+  const cell = value => {
+    let text = String(value ?? '');
+    // 避免文本在电子表格中被当作公式执行，负数字面量仍保留。
+    const probe = text.trimStart();
+    if (/^[=+@-]/.test(probe) && !/^-\d+(?:\.\d+)?(?:[eE][+-]?\d+)?$/.test(probe)) text = "'" + text;
+    return '"' + text.replace(/"/g, '""') + '"';
+  };
+  return '\uFEFF' + [CSV_FIELDS, ...rows.map(q => CSV_FIELDS.map(field => q[field]))].map(row => row.map(cell).join(',')).join('\r\n') + '\r\n';
+}
+function download(rows, filename) {
+  const blob = new Blob([toCSV(rows)], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a'); link.href = url; link.download = filename; document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1500);
+}
+async function importFile(file) {
+  if (!file) return;
+  try {
+    if (file.size > 20*1024*1024) throw new Error('文件超过 20 MB，请拆分后导入。');
+    const incoming = validateBank(parseCSV(await file.text()), 1);
+    // 支持少于20道的错题 CSV：合并到现有题库，相同题号更新，不足20题时不伪造重复题。
+    const merged = new Map(bank.map(q => [q.id, q]));
+    for (const q of incoming) merged.set(q.id, q);
+    const nextBank = validateBank([...merged.values()]);
+    const apply = () => {
+      bank = nextBank; byId = new Map(bank.map(q => [q.id,q]));
+      populateFilters(); $('difficulty-filter').value = ''; updatePool(); startRound();
+      notice(`已合并 ${incoming.length} 道题，当前题库共 ${bank.length} 道；相同题号已更新，此次导入仅对当前打开有效。`);
+    };
+    if (round.entries.some(e => !e.checked && e.selected !== null)) confirmAction('导入并开始新一轮？', `合并后题库有 ${nextBank.length} 道题，已提交记录会保留，尚未提交的选择会清空。`, '导入题库', apply);
+    else apply();
+  } catch (error) {notice(`导入失败：${error.message} 原题库和当前答卷保持不变。`, true);}
+  finally {$('csv-file').value = '';}
+}
+$('new-round').addEventListener('click', requestNewRound);
+$('again').addEventListener('click', requestNewRound);
+$('submit').addEventListener('click', submitQuestion);
+$('retry-content').addEventListener('click',()=>{if(round?.entries.length)void showFullQuestion(byId.get(round.entries[round.current].id),true);});
+$('retry').addEventListener('click',retryQuestion);
+$('feedback-close').addEventListener('click',()=>$('feedback-dialog').close());
+$('feedback-next').addEventListener('click',continueAfterFeedback);
+$('prev').addEventListener('click', () => step(-1));
+$('next').addEventListener('click', () => step(1));
+$('category-filter').addEventListener('change', updatePool);
+$('difficulty-filter').addEventListener('change', updatePool);
+$('download-bank').addEventListener('click', () => download(bank, 'algorithm_question_bank.csv'));
+$('download-errors').addEventListener('click', () => {const errors = bank.filter(q=>profile.records[q.id]?.status==='wrong'); if (errors.length) download(errors,'algorithm_mistakes.csv');});
+$('import-csv').addEventListener('click', () => $('csv-file').click());
+$('csv-file').addEventListener('change', event => importFile(event.target.files[0]));
+$('only-errors').addEventListener('change', event => {round.onlyErrors = event.target.checked; save(); render(); save();});
+$('dialog-cancel').addEventListener('click', () => {pendingAction = null; $('confirm-dialog').close();});
+$('dialog-confirm').addEventListener('click', () => {const action = pendingAction; pendingAction = null; $('confirm-dialog').close(); action?.();});
+$('confirm-dialog').addEventListener('cancel', () => {pendingAction = null;});
+document.addEventListener('keydown', event => {
+  if ($('confirm-dialog').open || $('feedback-dialog').open || event.altKey || event.ctrlKey || event.metaKey || /^(SELECT|TEXTAREA)$/.test(event.target.tagName) || (event.target.tagName === 'INPUT' && event.target.type !== 'radio')) return;
+  if (!round.entries[round.current]?.checked && /^[1-4]$/.test(event.key)) {event.preventDefault(); choose(round.entries[round.current].options[Number(event.key)-1]);}
+  else if (event.key === 'ArrowLeft') {event.preventDefault(); step(-1);}
+  else if (event.key === 'ArrowRight') {event.preventDefault(); step(1);}
+});
+function exportProfile() {
+  const blob=new Blob([JSON.stringify(profile,null,2)],{type:'application/json;charset=utf-8'});
+  const url=URL.createObjectURL(blob), link=document.createElement('a');
+  link.href=url;link.download='algorithm_personal_profile.json';document.body.append(link);link.click();link.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
+}
+async function importProfileFile(file) {
+  if (!file) return;
+  try {
+    if(file.size>20*1024*1024) throw new Error('记录文件超过 20 MB');
+    const incoming=validateProfile(JSON.parse(await file.text()));
+    profile=mergeProfiles(profile,incoming);saveBrowser();
+    // 恢复记录后重新抽题，避免继续展示刚导入的暂停题。
+    startRound();notice('个人记录已合并恢复：错题保留，未满 7 天的正确题不会抽到。');
+  } catch(error) {notice('恢复失败：'+error.message,true);}
+  finally {$('profile-file').value='';}
+}
+$('export-profile').addEventListener('click',exportProfile);
+$('import-profile').addEventListener('click',()=>$('profile-file').click());
+$('profile-file').addEventListener('change',event=>importProfileFile(event.target.files[0]));
+async function initialize() {
+  let warning='';
+  try {const raw=localStorage.getItem(STORAGE_KEY);if(raw)profile=validateProfile(JSON.parse(raw));}
+  catch(error) {warning='浏览器记录读取失败：'+error.message;}
+  if(PROFILE_TOKEN) {
+    try {
+      const response=await fetch('/api/profile',{headers:{'X-Profile-Token':PROFILE_TOKEN}});
+      const data=await response.json();if(!response.ok)throw new Error(data.error||'本地存档读取失败');
+      profile=mergeProfiles(profile,validateProfile(data.profile));
+    } catch(error) {warning='文件记录读取失败：'+error.message+'；当前使用浏览器备份。';}
+  }
+  populateFilters();
+  if(!restore() || round.entries.every(e=>e.checked)) startRound();
+  else {render();save();notice(restoreMessage);}
+  if(warning)notice(warning,true);
+}
+window.QuizReady=initialize();
+$('source-summary').textContent = `题库来源：力扣公开题面 · ${INITIAL_BANK.question_count} 道已整理题目 · ${INITIAL_BANK.public_index_count || '—'} 道公开目录记录。`;
+// 暴露纯函数供离线回归检查；答题不依赖测试框架。
+window.QuizCore = Object.freeze({shuffle, createRound, parseCSV, toCSV, validateBank, normalizeDifficulty});
+</script>
+</body>
+</html>

@@ -14,3 +14,7 @@ __pycache__/
 .DS_Store
 
 *copy/
+
+# 算法题库的个人进度、错题、复习时间与备份（仅本机）
+/algorithm_quiz/personal/
+/algorithm_quiz/algorithm_personal_profile*.json
